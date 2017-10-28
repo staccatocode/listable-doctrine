@@ -1,0 +1,26 @@
+{
+	"name" : "staccato/listable-doctrine",
+	"description" : "Staccato listable doctrine integration",
+	"type" : "library",
+	"license" : "MIT",
+	"authors" : [{
+			"name" : "Krystian Karaś",
+			"email" : "dev@karashome.pl"
+		}
+	],
+	"require" : {
+		"php" : ">=7.0",
+		"doctrine/orm": "~2.4,>=2.4.5",
+		"staccato/listable": "dev-master"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"Staccato\\Component\\Listable\\Doctrine\\" : "src/" 
+		}
+	},
+	"autoload-dev" : {
+		"psr-4" : {
+			"Staccato\\Component\\Listable\\Doctrine\\Tests\\" : "tests/"
+		}
+	}
+}
