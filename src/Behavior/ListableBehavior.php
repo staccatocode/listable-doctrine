@@ -21,7 +21,7 @@ trait ListableBehavior
      *
      * @return ListableRepository
      */
-    public function createList(): ListableRepository
+    public function createListableRepository(): ListableRepository
     {
         return new ListableRepository($this);
     }

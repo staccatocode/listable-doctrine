@@ -88,12 +88,17 @@ class ListableRepository extends AbstractRepository
     protected function prepareQueryBuilder($includeFilters = true, $includeSorter = true)
     {
         $qbSetter = function ($filters, $sorter, $includeFilters, $includeSorter) {
-            $qb = $this->createListableQueryBuilder();
+            if (method_exists($this, 'createListableQueryBuilder')) {
+                $qb = $this->createListableQueryBuilder();
+            } else {
+                $qb = $this->createQueryBuilder('e');
+            }
 
-            if ($includeFilters) {
+            if ($includeFilters && method_exists($this, 'setQueryBuilderFilters')) {
                 $this->setQueryBuilderFilters($qb, $filters);
             }
-            if ($includeSorter) {
+
+            if ($includeSorter && method_exists($this, 'setQueryBuilderSorter')) {
                 $this->setQueryBuilderSorter($qb, $sorter['name'], $sorter['type']);
             }
 
