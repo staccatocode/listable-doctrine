@@ -1,7 +1,7 @@
 <?php
 
 $header = <<<'EOF'
-This file is part of staccato listable component
+This file is part of staccato listable doctrine integration
 
 (c) Krystian Karaś <dev@karashome.pl>
 
@@ -16,7 +16,6 @@ return PhpCsFixer\Config::create()
         '@Symfony:risky' => true,
         'header_comment' => array('header' => $header),
         'combine_consecutive_unsets' => true,
-        'array_syntax' => array('syntax' => 'long'),
         'no_extra_consecutive_blank_lines' => array('break', 'continue', 'extra', 'return', 'throw', 'use', 'parenthesis_brace_block', 'square_brace_block', 'curly_brace_block'),
         'no_useless_else' => true,
         'no_useless_return' => true,
